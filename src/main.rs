@@ -21,6 +21,8 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
     let addr = SocketAddr::from((url, port));
 
+    println!("listening on {}", addr);
+
     let routes = routes::app_routes();
 
     axum::Server::bind(&addr)
