@@ -8,18 +8,14 @@ mod routes;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
-    dotenv().ok().expect(".env file not set");
-    let url = env::var("URL")
-        .expect("env variable URL not found")
-        .parse::<Ipv4Addr>()
-        .expect("kkk");
+    dotenv().ok()
 
     let port = env::var("PORT")
         .expect("env variable PORT not found")
         .parse::<u16>()
         .expect("not a valid port");
 
-    let addr = SocketAddr::from((url, port));
+    let addr = SocketAddr::from(([127, 0, 0, 1], port));
 
     println!("listening on {}", addr);
 
