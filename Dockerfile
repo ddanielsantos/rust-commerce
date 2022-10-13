@@ -7,7 +7,6 @@ RUN USER=root cargo new --bin buyrust
 WORKDIR /buyrust
 
 # copy info about the dependencies
-COPY ./.env ./.env
 COPY ./Cargo.lock ./Cargo.lock
 COPY ./Cargo.toml ./Cargo.toml
 
