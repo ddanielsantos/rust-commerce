@@ -23,5 +23,7 @@ FROM debian:buster-slim
 # from the previous stage
 COPY --from=build /buyrust/target/release/buyrust /usr/src/buyrust
 
+EXPOSE 2000
+
 # :)
 CMD ["/usr/src/buyrust"]
