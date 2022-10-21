@@ -1,7 +1,8 @@
 import { styled } from './stitches.config'
 
 export const Button = styled('button', {
-	fontWeight: '700',
+	fontWeight: 700,
+	fontFamily: 'Inter',
 	borderRadius: 10,
 	padding: '0.5rem 1rem',
 	transition: 'ease 0.3s',
@@ -16,21 +17,20 @@ export const Button = styled('button', {
 				'&:hover': {
 					cursor: 'pointer',
 					color: '$indigo100',
-					backgroundColor: 'White'
+					backgroundColor: 'White',
 				},
-				color: 'White'
+				color: 'White',
 			},
 			secondary: {
 				backgroundColor: 'White',
-				// borderWidth: 0,
 				borderColor: '$indigo100',
 				'&:hover': {
 					cursor: 'pointer',
 					color: 'White',
-					backgroundColor: '$indigo100'
+					backgroundColor: '$indigo100',
 				},
-				color: '$indigo100'
-			}
-		}
-	}
+				color: '$indigo100',
+			},
+		},
+	},
 })

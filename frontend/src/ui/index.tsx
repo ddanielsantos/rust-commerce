@@ -1,3 +1,6 @@
 export { Button } from './Button'
 export { Heading } from './Heading'
 export { Text } from './Text'
+export { Input } from './Input'
+export { Box } from './Box'
+export { Flex } from './Flex'
