@@ -1,59 +1,173 @@
 import type { NextPage } from 'next'
+import { Box, Button, Flex, Grid, Heading, Input, Text } from '../../src/ui/'
 import { Header } from '../../src/components/Header/Header'
+import NextImage from 'next/future/image'
+
+const placeholderLoader = () =>
+	'https://via.placeholder.com/150.png/dc7e6f/FFFFFF'
 
 const ProductPage: NextPage = () => {
 	return (
-		<div
-			style={{
-				minHeight: '100vh'
+		<Box
+			css={{
+				minHeight: '100vh',
+				width: '100%',
 			}}
 		>
 			<Header />
-			<div
-				style={{
+			<Flex
+				justify='center'
+				css={{
 					width: '100%',
-					display: 'flex',
-					flexDirection: 'column',
-					alignItems: 'center'
 				}}
 			>
-				<div
-					style={{
-						border: '3px solid red',
-						maxWidth: '60rem',
-						display: 'flex'
+				<Grid
+					alignContent='center'
+					css={{
+						maxWidth: '$5xl',
+						g: '$3',
+						gridTemplateColumns: '1fr',
+
+						p: '$3',
+						'@bp1': {
+							p: '$5',
+							gridTemplateColumns: '1fr $3xs',
+						},
 					}}
 				>
-					<main
-						style={{
-							border: '2px solid green',
-							flex: 1
+					<Flex
+						as='section'
+						wrap={'wrap'}
+						css={{
+							width: '100%',
+							gap: '$3',
 						}}
 					>
-						<h1>product name</h1>
-						<span>40 ratings</span>
-						<span>5 &#9733;</span>
-						<span>R$ 420,00</span>
-						<p>
-							rich text content here Lorem ipsum dolor sit amet consectetur,
-							adipisicing elit. Modi porro veniam distinctio velit debitis
-							voluptate? Tenetur excepturi ipsum harum ullam, voluptate
-							dignissimos doloribus maxime, ratione cupiditate nobis expedita
-							voluptatum saepe?
-						</p>
-					</main>
+						<Flex
+							as={'main'}
+							wrap={'wrap'}
+							direction={'column'}
+							align={'start'}
+							css={{
+								gap: '$3',
+								'@bp2': {
+									flexDirection: 'row',
+									gap: '$5',
+									alignItems: 'start',
+									justifyContent: 'flex-end',
+								},
+							}}
+						>
+							<Heading
+								css={{
+									marginRight: 'auto',
+								}}
+							>
+								product name
+							</Heading>
 
-					<aside
-						style={{
-							border: '2px solid green',
-							flex: 0.5
+							<Text aria-label='product description'>
+								rich text content here Lorem ipsum dolor sit amet consectetur,
+								adipisicing elit. Modi porro veniam distinctio velit debitis
+								voluptate? Tenetur excepturi ipsum harum ullam, voluptate
+								dignissimos doloribus maxime, ratione cupiditate nobis expedita
+								voluptatum saepe?
+							</Text>
+						</Flex>
+					</Flex>
+					<Grid
+						alignContent={'center'}
+						css={{
+							// gridTemplateColumns: 'max-content min-content',
+							alignItems: 'center',
+							g: '$5',
+							p: '$4',
+							height: 'fit-content',
+							backgroundColor: '$rust90',
+							borderRadius: '$lg',
 						}}
 					>
-						<button>add to chart</button>
-					</aside>
-				</div>
-			</div>
-		</div>
+						<Text
+							aria-label='current price'
+							css={{
+								color: 'White',
+								fontWeight: 'bold',
+								fontSize: '1.5rem',
+							}}
+						>
+							R$ 416,00
+						</Text>
+						<Text
+							aria-label='original price'
+							css={{
+								color: 'White',
+								textDecoration: 'line-through',
+								fontWeight: 'thin',
+							}}
+						>
+							R$ 520,00
+						</Text>
+						<Text
+							aria-label='user ratings'
+							css={{
+								color: 'White',
+							}}
+						>
+							5 &#9733; (40 ratings)
+						</Text>
+						<Text
+							aria-label='quantity in stock'
+							css={{
+								color: 'White',
+							}}
+						>
+							18 items in stock
+						</Text>
+					</Grid>
+					<Box
+						css={{
+							position: 'relative',
+							width: '100%',
+							aspectRatio: '4/3',
+						}}
+					>
+						<NextImage
+							alt='image placeholder'
+							loader={placeholderLoader}
+							src={'https://via.placeholder.com/150.png'}
+							fill={true}
+							style={{
+								borderRadius: '0.5rem',
+							}}
+						/>
+					</Box>
+					<Flex
+						as={'aside'}
+						direction='column'
+						css={{
+							width: '100%',
+							gap: '$2',
+						}}
+					>
+						<Button variant={'primary'}>add to chart</Button>
+
+						<Flex
+							direction='column'
+							css={{
+								gap: '1rem',
+							}}
+						>
+							<Text>calculate freight cost</Text>
+							<Text htmlFor='tax' as={'label'}>
+								your location
+							</Text>
+							<Input type='text' name='tax' id='tax' maxLength={10} />
+							<Button variant={'secondary'}>calculate</Button>
+						</Flex>
+					</Flex>
+				</Grid>
+			</Flex>
+		</Box>
 	)
 }
 

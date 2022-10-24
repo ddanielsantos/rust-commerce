@@ -1,10 +1,12 @@
+import { Button } from '../../ui/Button'
+
 const onClick = () => {
 	window.scrollTo({
 		top: 0,
-		behavior: 'smooth'
+		behavior: 'smooth',
 	})
 }
 
 export const BackToTop = () => {
-	return <button onClick={onClick}>back to top</button>
+	return <Button onClick={onClick}>back to top</Button>
 }
