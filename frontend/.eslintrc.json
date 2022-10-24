@@ -4,10 +4,10 @@
 		"eslint:recommended",
 		"plugin:prettier/recommended"
 	],
-  "globals": {
-    "JSX": true
-  },
-  "rules": {
-    "prettier/prettier": "error"
-  }
+	"globals": {
+		"JSX": true
+	},
+	"rules": {
+		"prettier/prettier": "error"
+	}
 }

@@ -58,12 +58,6 @@ export const { styled } = createStitches({
 			'6xl': '72rem',
 			'7xl': '80rem',
 			'8xl': '90rem',
-			container: {
-				sm: '640px',
-				md: '768px',
-				lg: '1024px',
-				xl: '1280px',
-			},
 		},
 		radii: {
 			sm: '0.125rem',
@@ -84,6 +78,9 @@ export const { styled } = createStitches({
 		bp5: '(min-width: 96rem)',
 	},
 	utils: {
+		g: (value: Stitches.PropertyValue<'gap'>) => ({
+			gap: value,
+		}),
 		p: (value: Stitches.PropertyValue<'padding'>) => ({
 			padding: value,
 		}),

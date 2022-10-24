@@ -4,5 +4,4 @@ export const Text = styled('p', {
 	fontFamily: 'Inter',
 	fontWeight: 400,
 	color: '$indigo100',
-	marginBottom: '1rem',
 })
