@@ -3,33 +3,43 @@ import { styled } from './stitches.config'
 export const Button = styled('button', {
 	fontWeight: 700,
 	fontFamily: 'Inter',
-	borderRadius: 10,
+	borderRadius: '$md',
 	padding: '0.5rem 1rem',
-	transition: 'ease 0.3s',
-	borderWidth: '3px',
-	borderStyle: 'solid',
+	transition: 'ease 0.4s',
+	border: '3px solid $indigo100',
+
+	'&:focus': {
+		outline: '3px solid #4299E1',
+	},
+
+	'&:hover': {
+		cursor: 'pointer',
+	},
+
+	'&:hover:active': {
+		backgroundColor: 'LimeGreen',
+		color: 'White',
+	},
 
 	variants: {
 		variant: {
 			primary: {
 				backgroundColor: '$indigo100',
-				borderColor: '$indigo100',
-				'&:hover': {
-					cursor: 'pointer',
-					color: '$indigo100',
-					backgroundColor: 'White',
-				},
 				color: 'White',
+
+				'&:hover': {
+					backgroundColor: 'White',
+					color: '$indigo100',
+				},
 			},
 			secondary: {
 				backgroundColor: 'White',
-				borderColor: '$indigo100',
-				'&:hover': {
-					cursor: 'pointer',
-					color: 'White',
-					backgroundColor: '$indigo100',
-				},
 				color: '$indigo100',
+
+				'&:hover': {
+					backgroundColor: '$indigo100',
+					color: 'White',
+				},
 			},
 		},
 	},

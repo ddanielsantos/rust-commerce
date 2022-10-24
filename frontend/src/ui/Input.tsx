@@ -6,5 +6,9 @@ export const Input = styled('input', {
 	color: '$indigo100',
 	padding: '0.5rem 1rem',
 	border: '3px solid indigo',
-	borderRadius: 10,
+	borderRadius: '$md',
+
+	'&:focus': {
+		outline: '3px solid #4299E1',
+	},
 })
