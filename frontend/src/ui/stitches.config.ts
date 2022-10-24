@@ -4,7 +4,9 @@ import type * as Stitches from '@stitches/react'
 export const { styled } = createStitches({
 	theme: {
 		colors: {
-			indigo100: 'indigo',
+			rust100: '#CD4631',
+			rust90: '#d25946',
+			rust70: '#dc7e6f',
 		},
 		space: {
 			0.5: '0.125rem',
