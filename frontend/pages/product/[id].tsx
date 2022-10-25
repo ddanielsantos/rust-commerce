@@ -1,7 +1,8 @@
 import type { NextPage } from 'next'
-import { Box, Button, Flex, Grid, Heading, Input, Text } from '../../src/ui/'
+import { Box, Button, Flex, Grid, Heading, Text } from '../../src/ui/'
 import { Header } from '../../src/components/Header/Header'
-import NextImage from 'next/future/image'
+import NextImage from 'next/image'
+import { CalculateFreight } from '../../src/components/CalculateFreight/CalculateFreight'
 
 const placeholderLoader = () =>
 	'https://via.placeholder.com/150.png/dc7e6f/FFFFFF'
@@ -151,19 +152,7 @@ const ProductPage: NextPage = () => {
 					>
 						<Button variant={'primary'}>add to chart</Button>
 
-						<Flex
-							direction='column'
-							css={{
-								gap: '1rem',
-							}}
-						>
-							<Text>calculate freight cost</Text>
-							<Text htmlFor='tax' as={'label'}>
-								your location
-							</Text>
-							<Input type='text' name='tax' id='tax' maxLength={10} />
-							<Button variant={'secondary'}>calculate</Button>
-						</Flex>
+						<CalculateFreight />
 					</Flex>
 				</Grid>
 			</Flex>
