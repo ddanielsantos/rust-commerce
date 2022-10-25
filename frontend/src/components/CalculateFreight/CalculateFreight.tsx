@@ -5,12 +5,21 @@ export const CalculateFreight = () => {
 		<Flex
 			direction='column'
 			css={{
-				gap: '1rem',
+				gap: '$3',
+				border: '3px solid $rust100',
+				borderRadius: '$lg',
+				p: '$3',
 			}}
 		>
-			<Text>calculate freight cost</Text>
+			<Text
+				css={{
+					fontWeight: 700,
+				}}
+			>
+				calculate freight cost
+			</Text>
 			<Text htmlFor='tax' as={'label'}>
-				your location
+				your location:
 			</Text>
 			<Input type='text' name='tax' id='tax' maxLength={10} />
 			<Button variant={'secondary'}>calculate</Button>

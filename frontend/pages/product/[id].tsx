@@ -147,7 +147,7 @@ const ProductPage: NextPage = () => {
 						direction='column'
 						css={{
 							width: '100%',
-							gap: '$2',
+							gap: '$3',
 						}}
 					>
 						<Button variant={'primary'}>add to chart</Button>
