@@ -1,7 +1,13 @@
 import NextLink from 'next/link'
-import { Button, Text, Flex } from '../../ui/'
+import { useRouter } from 'next/router'
+import { useCart } from '../../context/CartContext'
+import { Button, Text, Flex, Box } from '../../ui/'
+import { CartQuantityIndicator } from '../CartQuantityIndicator/CartQuantityIndicator'
 
 export const Header = () => {
+	const shouldDisplayCartButton = !useRouter().route.includes('/cart')
+	const { numberOfItems } = useCart()
+
 	return (
 		<Flex
 			justify={'between'}
@@ -32,7 +38,23 @@ export const Header = () => {
 				}}
 			>
 				<Button variant={'secondary'}>login</Button>
-				<Text>0</Text>
+				{shouldDisplayCartButton && (
+					<NextLink
+						href='/cart'
+						style={{
+							textDecoration: 'none',
+						}}
+					>
+						<Box
+							css={{
+								textDecoration: 'none',
+							}}
+						>
+							<CartQuantityIndicator quantity={numberOfItems} />
+							<Button variant='secondary'>cart icon</Button>
+						</Box>
+					</NextLink>
+				)}
 			</Flex>
 		</Flex>
 	)
