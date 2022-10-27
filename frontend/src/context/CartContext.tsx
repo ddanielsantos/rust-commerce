@@ -1,10 +1,13 @@
-import { createContext, Dispatch, ReactNode, useReducer } from 'react'
+import {
+	createContext,
+	Dispatch,
+	ReactNode,
+	useContext,
+	useReducer,
+} from 'react'
 
 type CartItem = {
 	id: string
-	name: string
-	quantity: number
-	current_price: string
 }
 
 export const enum CartDispatcherKind {
@@ -17,43 +20,45 @@ type CartAction = {
 	item: CartItem
 }
 
-export type CartMap = Map<string, CartItem>
+type quantity = number
+
+export type CartMap = {
+	[k: string]: quantity | undefined
+}
 
 export function cartReducerFn(state: CartMap, action: CartAction): CartMap {
 	switch (action.type) {
 		case CartDispatcherKind.ADD_ITEM: {
-			const previous = state.get(action.item?.id)
+			const previous = state[action.item.id]
 
 			if (!previous) {
-				state.set(action.item?.id, action.item)
-
-				return state
+				return {
+					...state,
+					[action.item.id]: 1,
+				}
 			}
 
-			state.set(previous.id, {
-				...previous,
-				quantity: previous.quantity + 1,
-			})
-
-			return state
+			return {
+				...state,
+				[action.item.id]: previous + 1,
+			}
 		}
 		case CartDispatcherKind.REMOVE_ITEM: {
-			const previous = state.get(action.item?.id)
+			const previous = state[action.item.id]
 
 			if (!previous) return state
 
-			if (previous.quantity === 1) {
-				state.delete(previous.id)
-
-				return state
+			if (previous === 1) {
+				return {
+					...state,
+					[action.item.id]: undefined,
+				}
 			}
 
-			state.set(previous.id, {
-				...previous,
-				quantity: previous.quantity - 1,
-			})
-
-			return state
+			return {
+				...state,
+				[action.item.id]: previous - 1,
+			}
 		}
 		default: {
 			return state
@@ -63,6 +68,7 @@ export function cartReducerFn(state: CartMap, action: CartAction): CartMap {
 
 type CartContextProps = {
 	items: CartMap
+	numberOfItems: number
 	cartDispatcher: Dispatch<CartAction>
 }
 
@@ -72,13 +78,35 @@ type Props = {
 	children: ReactNode
 }
 
+export const getNumberOfItems = (obj: CartMap): number => {
+	return Object.keys(obj).reduce((acc, prev) => {
+		const qtd = obj[prev]
+
+		if (!qtd) return acc
+
+		return acc + qtd
+	}, 0)
+}
+
 export const CartProvider = ({ children }: Props) => {
-	const initialCartValue: CartMap = new Map()
+	const initialCartValue: CartMap = {}
 	const [items, cartDispatcher] = useReducer(cartReducerFn, initialCartValue)
 
 	return (
-		<CartContext.Provider value={{ items, cartDispatcher }}>
+		<CartContext.Provider
+			value={{ items, cartDispatcher, numberOfItems: getNumberOfItems(items) }}
+		>
 			{children}
 		</CartContext.Provider>
 	)
+}
+
+export function useCart() {
+	const context = useContext(CartContext)
+
+	if (!context) {
+		throw Error('Cart can only be used inside CartProvider')
+	}
+
+	return context
 }
