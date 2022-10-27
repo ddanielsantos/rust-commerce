@@ -1,8 +1,9 @@
 import type { NextPage } from 'next'
-import { Box, Button, Flex, Grid, Heading, Text } from '../../src/ui/'
+import { Box, Flex, Grid, Heading, Text } from '../../src/ui/'
 import { Header } from '../../src/components/Header/Header'
 import NextImage from 'next/image'
 import { CalculateFreight } from '../../src/components/CalculateFreight/CalculateFreight'
+import { AddToChartButton } from '../../src/components/AddToChartButton/AddToChartButton'
 
 const placeholderLoader = () =>
 	'https://via.placeholder.com/150.png/dc7e6f/FFFFFF'
@@ -150,7 +151,7 @@ const ProductPage: NextPage = () => {
 							gap: '$3',
 						}}
 					>
-						<Button variant={'primary'}>add to chart</Button>
+						<AddToChartButton />
 
 						<CalculateFreight />
 					</Flex>
