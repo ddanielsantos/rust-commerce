@@ -3,7 +3,7 @@ An e-commerce for study purposes only
 
 ## todo
 - [ ] i18n
-- [ ] everything in Docke
+- [ ] everything in Docker
 - [ ] everything documented (storybook and openapi)
 - [ ] test almost everything possible
 - [ ] desgin-system/ui package (turborepo or pnpm
