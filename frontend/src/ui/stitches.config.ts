@@ -7,6 +7,7 @@ export const { styled } = createStitches({
 			rust100: '#CD4631',
 			rust90: '#d25946',
 			rust70: '#dc7e6f',
+			rust50: '#e6a398',
 		},
 		space: {
 			0.5: '0.125rem',
