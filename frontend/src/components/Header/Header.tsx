@@ -10,15 +10,12 @@ export const Header = () => {
 
 	return (
 		<Flex
+			type='spaced'
 			justify={'between'}
 			align={'center'}
 			css={{
 				borderBottom: '3px solid $rust100',
 				width: '100%',
-				p: '$3',
-				'@bp1': {
-					p: '$5',
-				},
 			}}
 		>
 			<NextLink href={'/product/1'}>

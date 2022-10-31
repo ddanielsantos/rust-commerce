@@ -2,11 +2,12 @@ import { styled } from './stitches.config'
 
 export const Button = styled('button', {
 	fontWeight: 700,
+	fontSize: 'medium',
 	fontFamily: 'Inter',
 	borderRadius: '$lg',
-	padding: '0.5rem 1rem',
+	padding: '0.7rem 1rem',
 	transition: 'ease 0.4s',
-	border: '3px solid $rust100',
+	border: '1px solid',
 
 	'&:focus': {
 		outline: '3px solid #4299E1',
@@ -19,31 +20,33 @@ export const Button = styled('button', {
 	variants: {
 		variant: {
 			primary: {
-				backgroundColor: '$rust100',
+				backgroundColor: '$rust90',
 				color: 'White',
 
 				'&:hover': {
 					backgroundColor: 'White',
-					color: '$rust100',
+					color: '$rust90',
 				},
 
 				'&:hover:active': {
-					backgroundColor: '$rust100',
+					backgroundColor: '$rust90',
 					color: 'White',
 				},
 			},
 			secondary: {
 				backgroundColor: 'White',
-				color: '$rust100',
+				color: '$rust90',
+				borderColor: 'Gainsboro',
 
 				'&:hover': {
-					backgroundColor: '$rust100',
+					backgroundColor: '$rust90',
 					color: 'White',
+					borderColor: '$rust90',
 				},
 
 				'&:hover:active': {
 					backgroundColor: 'White',
-					color: '$rust100',
+					color: '$rust90',
 				},
 			},
 		},

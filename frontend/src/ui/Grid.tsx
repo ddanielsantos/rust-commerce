@@ -1,7 +1,7 @@
 import { styled } from './stitches.config'
+import { Box } from './Box'
 
-export const Grid = styled('div', {
-	boxSizing: 'border-box',
+export const Grid = styled(Box, {
 	display: 'grid',
 	width: '100%',
 

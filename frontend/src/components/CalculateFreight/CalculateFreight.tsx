@@ -3,12 +3,10 @@ import { Flex, Input, Button, Text } from '../../ui'
 export const CalculateFreight = () => {
 	return (
 		<Flex
+			type='unspaced'
 			direction='column'
 			css={{
-				gap: '$3',
-				border: '3px solid $rust100',
-				borderRadius: '$lg',
-				p: '$3',
+				gap: '$5',
 			}}
 		>
 			<Text
@@ -21,7 +19,13 @@ export const CalculateFreight = () => {
 			<Text htmlFor='tax' as={'label'}>
 				your location:
 			</Text>
-			<Input type='text' name='tax' id='tax' maxLength={10} />
+			<Input
+				type='text'
+				name='tax'
+				id='tax'
+				maxLength={10}
+				placeholder={'insert your zip code here'}
+			/>
 			<Button variant={'secondary'}>calculate</Button>
 		</Flex>
 	)

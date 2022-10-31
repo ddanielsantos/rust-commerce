@@ -18,6 +18,7 @@ const ProductPage: NextPage = () => {
 		>
 			<Header />
 			<Flex
+				type='spaced'
 				justify='center'
 				css={{
 					width: '100%',
@@ -27,12 +28,10 @@ const ProductPage: NextPage = () => {
 					alignContent='center'
 					css={{
 						maxWidth: '$5xl',
-						g: '$3',
+						g: '$5',
 						gridTemplateColumns: '1fr',
 
-						p: '$3',
 						'@bp1': {
-							p: '$5',
 							gridTemplateColumns: '1fr $3xs',
 						},
 					}}
@@ -78,12 +77,11 @@ const ProductPage: NextPage = () => {
 						</Flex>
 					</Flex>
 					<Grid
+						type='spaced'
 						alignContent={'center'}
 						css={{
-							// gridTemplateColumns: 'max-content min-content',
 							alignItems: 'center',
 							g: '$5',
-							p: '$4',
 							height: 'fit-content',
 							backgroundColor: '$rust90',
 							borderRadius: '$lg',
@@ -148,7 +146,7 @@ const ProductPage: NextPage = () => {
 						direction='column'
 						css={{
 							width: '100%',
-							gap: '$3',
+							gap: '$5',
 						}}
 					>
 						<AddToChartButton />

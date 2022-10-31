@@ -58,16 +58,7 @@ const CartTotalSum = () => {
 	const { numberOfItems } = useCart()
 
 	return (
-		<Box
-			css={{
-				border: '3px solid $rust100',
-				borderRadius: 10,
-				p: '$3',
-				'@bp1': {
-					p: '$5',
-				},
-			}}
-		>
+		<Box type='spaced' border={'grey'}>
 			{numberOfItems === 0 ? (
 				<Text>the cart is empty</Text>
 			) : (
@@ -88,6 +79,7 @@ const CartPage: NextPage = () => {
 		>
 			<Header />
 			<Flex
+				type='spaced'
 				justify='center'
 				css={{
 					width: '100%',
@@ -100,9 +92,7 @@ const CartPage: NextPage = () => {
 						g: '$3',
 						gridTemplateColumns: '1fr',
 
-						p: '$3',
 						'@bp1': {
-							p: '$5',
 							gridTemplateColumns: '1fr $3xs',
 						},
 					}}
@@ -114,10 +104,6 @@ const CartPage: NextPage = () => {
 							borderRadius: 10,
 
 							g: '$3',
-							p: '$3',
-							'@bp1': {
-								p: '$5',
-							},
 						}}
 					>
 						<Heading>Cart</Heading>
