@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import { Header } from '../../src/components/Header/Header'
+import { CartItem } from '../../src/components/CartItem/CartItem'
 import { useCart } from '../../src/context/CartContext'
 import { Box, Flex, Text, Grid, Heading } from '../../src/ui'
 
@@ -11,45 +12,10 @@ const CartItemsList = () => {
 	}
 
 	return (
-		<Flex>
-			{Object.keys(items).map(key => {
-				return (
-					<Box
-						key={key}
-						css={{
-							p: '$4',
-							width: '100%',
-							// border: '3px solid $rust100',
-							borderRadius: '$lg',
-							transition: 'ease 0.2s',
-							'&:hover': {
-								backgroundColor: '$rust50',
-								'&>span': {
-									color: 'White',
-								},
-							},
-						}}
-					>
-						<Text
-							as='span'
-							css={{
-								fontWeight: 700,
-								color: '$rust50',
-							}}
-						>
-							cool item name here
-						</Text>
-						<Text
-							as='span'
-							css={{
-								color: 'White',
-							}}
-						>
-							{items[key]}
-						</Text>
-					</Box>
-				)
-			})}
+		<Flex direction='column' css={{ g: '$3' }}>
+			{Object.keys(items).map(key => (
+				<CartItem key={key} id={key} />
+			))}
 		</Flex>
 	)
 }
@@ -100,7 +66,6 @@ const CartPage: NextPage = () => {
 					<Flex
 						direction={'column'}
 						css={{
-							border: '3px solid $rust100',
 							borderRadius: 10,
 
 							g: '$3',
