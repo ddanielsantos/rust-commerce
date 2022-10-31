@@ -58,10 +58,21 @@ const CartPage: NextPage = () => {
 						direction={'column'}
 						roundedBorder
 						css={{
-							g: '$3',
+							g: '$5',
 						}}
 					>
 						<Heading>Cart</Heading>
+						<Flex
+							roundedBorder
+							borderVariant={'simple'}
+							type='spaced'
+							justify='between'
+						>
+							{/* TODO: orderable by property */}
+							<Text css={{ fontWeight: 700 }}>product</Text>
+							<Text css={{ fontWeight: 700 }}>quantity</Text>
+							<Text css={{ fontWeight: 700 }}>subtotal</Text>
+						</Flex>
 
 						<CartItemsList items={items} numberOfItems={numberOfItems} />
 					</Flex>
