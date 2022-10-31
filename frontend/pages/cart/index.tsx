@@ -1,12 +1,16 @@
 import type { NextPage } from 'next'
 import { Header } from '../../src/components/Header/Header'
 import { CartItem } from '../../src/components/CartItem/CartItem'
-import { useCart } from '../../src/context/CartContext'
-import { Box, Flex, Text, Grid, Heading } from '../../src/ui'
+import { CartTotalSum } from '../../src/components/CartTotalSum/CartTotalSum'
+import { CartMap, useCart } from '../../src/context/CartContext'
+import { Flex, Text, Grid, Heading } from '../../src/ui'
 
-const CartItemsList = () => {
-	const { numberOfItems, items } = useCart()
+type CartItemsListProps = {
+	items: CartMap
+	numberOfItems: number
+}
 
+const CartItemsList = ({ items, numberOfItems }: CartItemsListProps) => {
 	if (numberOfItems === 0) {
 		return <Text>there are no items in the cart</Text>
 	}
@@ -20,21 +24,8 @@ const CartItemsList = () => {
 	)
 }
 
-const CartTotalSum = () => {
-	const { numberOfItems } = useCart()
-
-	return (
-		<Box type='spaced' borderVariant={'simple'} roundedBorder>
-			{numberOfItems === 0 ? (
-				<Text>the cart is empty</Text>
-			) : (
-				<Text>Total sum:</Text>
-			)}
-		</Box>
-	)
-}
-
 const CartPage: NextPage = () => {
+	const { numberOfItems, items } = useCart()
 	return (
 		<Flex
 			direction='column'
@@ -71,9 +62,10 @@ const CartPage: NextPage = () => {
 						}}
 					>
 						<Heading>Cart</Heading>
-						<CartItemsList />
+
+						<CartItemsList items={items} numberOfItems={numberOfItems} />
 					</Flex>
-					<CartTotalSum />
+					{numberOfItems !== 0 && <CartTotalSum />}
 				</Grid>
 			</Flex>
 		</Flex>
