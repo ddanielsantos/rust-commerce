@@ -1,7 +1,7 @@
 import { Button } from '../../ui'
 import { CartDispatcherKind, useCart } from '../../context/CartContext'
 
-export const AddToChartButton = () => {
+export const AddToCartButton = () => {
 	const { cartDispatcher } = useCart()
 
 	const onClick = () => {
