@@ -92,7 +92,7 @@ const ProductPage: NextPage = () => {
 							css={{
 								color: 'White',
 								fontWeight: 'bold',
-								fontSize: '1.5rem',
+								fontSize: 'xx-large',
 							}}
 						>
 							R$ 416,00

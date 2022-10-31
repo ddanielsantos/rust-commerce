@@ -5,7 +5,7 @@ const shadowColor = 'hsl(8 61% 75% / 0.36)'
 
 export const Card = styled(Box, {
 	transition: 'ease 0.3s',
-	'&:hover span': {
+	'&:hover *': {
 		color: '$rust100',
 	},
 	'&:hover': {
