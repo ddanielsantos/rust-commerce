@@ -79,12 +79,12 @@ const ProductPage: NextPage = () => {
 					<Grid
 						type='spaced'
 						alignContent={'center'}
+						roundedBorder
 						css={{
 							alignItems: 'center',
 							g: '$5',
 							height: 'fit-content',
 							backgroundColor: '$rust90',
-							borderRadius: '$lg',
 						}}
 					>
 						<Text
@@ -137,7 +137,7 @@ const ProductPage: NextPage = () => {
 							src={'https://via.placeholder.com/150.png'}
 							fill={true}
 							style={{
-								borderRadius: '0.5rem',
+								borderRadius: '10px',
 							}}
 						/>
 					</Box>

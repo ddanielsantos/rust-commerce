@@ -9,7 +9,8 @@ export const CartItem = ({ id }: CartItemProps) => {
 		<Card
 			key={id}
 			type='spaced'
-			border='grey'
+			borderVariant='simple'
+			roundedBorder
 			css={{
 				width: '100%',
 				backgroundColor: 'White',

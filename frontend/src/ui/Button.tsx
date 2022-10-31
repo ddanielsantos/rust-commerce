@@ -4,7 +4,7 @@ export const Button = styled('button', {
 	fontWeight: 700,
 	fontSize: 'medium',
 	fontFamily: 'Inter',
-	borderRadius: '$lg',
+	borderRadius: 10,
 	padding: '0.7rem 1rem',
 	transition: 'ease 0.4s',
 	border: '1px solid',

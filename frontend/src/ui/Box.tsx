@@ -20,10 +20,14 @@ export const Box = styled('div', {
 			},
 		},
 
-		border: {
+		borderVariant: {
 			none: {},
-			grey: {
+			simple: {
 				border: '1px solid Gainsboro',
+			},
+		},
+		roundedBorder: {
+			true: {
 				borderRadius: 10,
 			},
 		},

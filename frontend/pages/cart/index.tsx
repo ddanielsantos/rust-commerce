@@ -24,7 +24,7 @@ const CartTotalSum = () => {
 	const { numberOfItems } = useCart()
 
 	return (
-		<Box type='spaced' border={'grey'}>
+		<Box type='spaced' borderVariant={'simple'} roundedBorder>
 			{numberOfItems === 0 ? (
 				<Text>the cart is empty</Text>
 			) : (
@@ -65,9 +65,8 @@ const CartPage: NextPage = () => {
 				>
 					<Flex
 						direction={'column'}
+						roundedBorder
 						css={{
-							borderRadius: 10,
-
 							g: '$3',
 						}}
 					>
