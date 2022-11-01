@@ -1,4 +1,5 @@
 import { Card, Flex, Text } from '../../ui'
+import { moneyFormatter } from '../../utils/MoneyFormatter'
 
 type CartItemProps = {
 	id: string
@@ -18,12 +19,6 @@ const fakeDB: Record<string, any> = {
 		quantity: 13,
 	},
 }
-
-// TODO: format the money based on user location
-const moneyFormatter = new Intl.NumberFormat('br', {
-	style: 'currency',
-	currency: 'BRL',
-})
 
 export const CartItem = ({ id }: CartItemProps) => {
 	// const formattedPrice = moneyFormatter.format(fakeDB[id].current_price)
