@@ -7,14 +7,9 @@ import { Flex, Text, Grid, Heading } from '../../src/ui'
 
 type CartItemsListProps = {
 	items: CartMap
-	numberOfItems: number
 }
 
-const CartItemsList = ({ items, numberOfItems }: CartItemsListProps) => {
-	if (numberOfItems === 0) {
-		return <Text>there are no items in the cart</Text>
-	}
-
+const CartItemsList = ({ items }: CartItemsListProps) => {
 	return (
 		<Flex direction='column' css={{ g: '$3' }}>
 			{Object.keys(items).map(key => (
@@ -46,7 +41,7 @@ const CartPage: NextPage = () => {
 					alignContent='center'
 					css={{
 						maxWidth: '$5xl',
-						g: '$3',
+						g: '$5',
 						gridTemplateColumns: '1fr',
 
 						'@bp1': {
@@ -55,28 +50,45 @@ const CartPage: NextPage = () => {
 					}}
 				>
 					<Flex
-						direction={'column'}
-						roundedBorder
 						css={{
-							g: '$5',
+							gridColumn: '1',
+							'@bp1': {
+								gridColumn: '1 / 3',
+							},
 						}}
 					>
 						<Heading>Cart</Heading>
-						<Flex
-							roundedBorder
-							borderVariant={'simple'}
-							type='spaced'
-							justify='between'
-						>
-							{/* TODO: orderable by property */}
-							<Text css={{ fontWeight: 700 }}>product</Text>
-							<Text css={{ fontWeight: 700 }}>quantity</Text>
-							<Text css={{ fontWeight: 700 }}>subtotal</Text>
-						</Flex>
-
-						<CartItemsList items={items} numberOfItems={numberOfItems} />
 					</Flex>
-					{numberOfItems !== 0 && <CartTotalSum />}
+
+					{numberOfItems !== 0 ? (
+						<>
+							<Flex
+								direction={'column'}
+								roundedBorder
+								css={{
+									g: '$5',
+									gridColumn: '1',
+								}}
+							>
+								<Flex
+									roundedBorder
+									borderVariant={'simple'}
+									type='spaced'
+									justify='between'
+								>
+									{/* TODO: orderable by property */}
+									<Text css={{ fontWeight: 700 }}>product</Text>
+									<Text css={{ fontWeight: 700 }}>quantity</Text>
+									<Text css={{ fontWeight: 700 }}>subtotal</Text>
+								</Flex>
+
+								<CartItemsList items={items} />
+							</Flex>
+							<CartTotalSum />
+						</>
+					) : (
+						<Text>there are no items in the cart</Text>
+					)}
 				</Grid>
 			</Flex>
 		</Flex>

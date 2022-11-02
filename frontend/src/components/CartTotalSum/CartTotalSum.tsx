@@ -1,4 +1,5 @@
-import { Grid, Text } from '../../ui'
+import NextLink from 'next/link'
+import { Button, Grid, Text } from '../../ui'
 import { moneyFormatter } from '../../utils/MoneyFormatter'
 
 export const CartTotalSum = () => {
@@ -10,14 +11,26 @@ export const CartTotalSum = () => {
 			borderVariant={'simple'}
 			roundedBorder
 			css={{
-				gap: '$3',
-				gridTemplateColumns: '1fr 1fr',
+				// gap: '$2',
+				gridRowGap: '$5',
+
+				// TODO: handle grid wrapping on big texts
+				gridTemplateColumns: 'repeat(auto-fit, minmax(6rem, 1fr))',
 				height: 'fit-content',
 			}}
 		>
-			<Text>Total sum: </Text>
+			<Text>Raw value: </Text>
 			<Text>{total}</Text>
 			<Text>Discounts: </Text>
+			<Text>{total}</Text>
+			{/* <hr
+				style={{
+					gridColumn: '1 / 3',
+					borderColor: '#ffffffaa',
+					borderWidth: 1,
+				}}
+			/> */}
+			<Text>Subtotal: </Text>
 			<Text>{total}</Text>
 			<hr
 				style={{
@@ -26,8 +39,10 @@ export const CartTotalSum = () => {
 					borderWidth: 1,
 				}}
 			/>
-			<Text>Final price: </Text>
-			<Text>{total}</Text>
+			<NextLink href='/checkout'>
+				{/* TODO: full width button */}
+				<Button variant='primary'>proceed</Button>
+			</NextLink>
 		</Grid>
 	)
 }
