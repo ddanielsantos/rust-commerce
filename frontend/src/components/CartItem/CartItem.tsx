@@ -5,6 +5,7 @@ type CartItemProps = {
 	id: string
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const fakeDB: Record<string, any> = {
 	'3': {
 		name: 'awesome product',

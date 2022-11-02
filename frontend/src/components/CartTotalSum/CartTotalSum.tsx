@@ -11,8 +11,11 @@ export const CartTotalSum = () => {
 			borderVariant={'simple'}
 			roundedBorder
 			css={{
-				gap: '$5',
-				gridTemplateColumns: '1fr 1fr',
+				// gap: '$2',
+				gridRowGap: '$5',
+
+				// TODO: handle grid wrapping on big texts
+				gridTemplateColumns: 'repeat(auto-fit, minmax(6rem, 1fr))',
 				height: 'fit-content',
 			}}
 		>
@@ -37,9 +40,8 @@ export const CartTotalSum = () => {
 				}}
 			/>
 			<NextLink href='/checkout'>
-				<Button variant='primary' css={{ gridColumn: '1 / 3' }}>
-					proceed
-				</Button>
+				{/* TODO: full width button */}
+				<Button variant='primary'>proceed</Button>
 			</NextLink>
 		</Grid>
 	)

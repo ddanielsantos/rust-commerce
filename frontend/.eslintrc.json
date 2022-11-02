@@ -3,14 +3,14 @@
 		"next/core-web-vitals",
 		"eslint:recommended",
 		"plugin:prettier/recommended",
-    "plugin:@typescript-eslint/recommended"
+		"plugin:@typescript-eslint/recommended"
 	],
 	"globals": {
 		"JSX": true
 	},
 	"rules": {
 		"prettier/prettier": "error",
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": "error"
+		"no-unused-vars": "off",
+		"@typescript-eslint/no-unused-vars": "error"
 	}
 }
