@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { CartProvider } from '../src/context/CartContext'
+import { CartProvider } from './CartContext'
 
 type Props = {
 	children: ReactNode
