@@ -1,7 +1,8 @@
 import { useDialogState } from 'ariakit/dialog'
+import { FormEvent } from 'react'
 import { Dialog, Button, Flex, Input, MaskedInput, Text } from '../../ui'
 
-const onSubmit = e => {
+const onSubmit = (e: FormEvent<HTMLFormElement>) => {
 	e.preventDefault()
 }
 
