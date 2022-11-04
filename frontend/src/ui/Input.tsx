@@ -5,7 +5,7 @@ export const Input = styled('input', {
 	fontWeight: 700,
 	color: '$rust100',
 	padding: '0.7rem 1rem',
-	border: 'none',
+	border: '1px solid Gainsboro',
 	borderRadius: 10,
 
 	'&:focus': {

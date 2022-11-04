@@ -1,6 +1,8 @@
 import { createStitches, globalCss } from '@stitches/react'
 import type * as Stitches from '@stitches/react'
 
+const shadowColor = 'hsl(8 61% 75% / 0.36)'
+
 export const { styled } = createStitches({
 	theme: {
 		colors: {
@@ -71,6 +73,12 @@ export const { styled } = createStitches({
 			'2xl': '1rem',
 			'3xl': '1.5rem',
 			full: '9999px',
+		},
+		shadows: {
+			medium: `0px 1px 1.1px ${shadowColor},
+      0px 3.3px 3.7px -0.8px ${shadowColor},
+      0.1px 8.2px 9.2px -1.7px ${shadowColor},
+      0.2px 20px 22.5px -2.5px ${shadowColor}`,
 		},
 	},
 	media: {

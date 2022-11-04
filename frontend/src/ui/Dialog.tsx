@@ -2,28 +2,29 @@ import { styled } from './stitches.config'
 import { Dialog, DialogDismiss, DialogHeading } from 'ariakit/dialog'
 
 export const Wrapper = styled(Dialog, {
-	border: '1px solid Gainsboro',
+	border: '1px solid gainsboro',
 	boxSizing: 'border-box',
 	'&> form': {
 		display: 'flex',
 		flexDirection: 'column',
 		gap: '$5',
+		flex: 1,
 	},
 	width: '$5xl',
-	maxWidth: 'calc(100% - 1rem * 2)',
-	height: '70%',
-	maxHeight: 'calc(100% - 1rem * 2)',
+	maxWidth: 'calc(100vw - 1rem * 2)',
+	height: '70vh',
+	maxHeight: 'calc(100vh - 1rem * 2)',
 	backgroundColor: 'White',
 	overflowY: 'scroll',
 
-	scale: 0.7,
-	transitionDuration: '200ms',
+	transform: 'translateY(-400px)',
+	transitionDuration: '0.8s',
 	'&[data-enter]': {
-		scale: 1,
+		transform: 'translateY(0)',
 	},
 
 	'&[data-leave]': {
-		scale: 0.7,
+		transform: 'translateY(-400px)',
 	},
 
 	p: '$4',
