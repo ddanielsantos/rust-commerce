@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
-import NextLink from 'next/link'
 import { Header } from '../../src/components/Header/Header'
-import { Flex, Heading, Button } from '../../src/ui'
+import { Flex, Heading, Text } from '../../src/ui'
+import { PaymentSelection } from '../../src/components/PaymentSelection/PaymentSelection'
 
 const CheckoutPage: NextPage = () => {
 	return (
@@ -20,13 +20,36 @@ const CheckoutPage: NextPage = () => {
 					width: '100%',
 				}}
 			>
-				<Heading>Checkout</Heading>
-				<NextLink href='/cart'>
-					<Button variant='secondary'>back to cart</Button>
-				</NextLink>
-				<NextLink href=''>
-					<Button variant='primary'>finish buy</Button>
-				</NextLink>
+				<Flex
+					direction='column'
+					css={{
+						maxWidth: '$5xl',
+						gap: '$5',
+						flex: 1,
+					}}
+				>
+					<Heading>Checkout</Heading>
+
+					<Flex
+						type='spaced'
+						borderVariant='simple'
+						roundedBorder
+						direction='column'
+						css={{
+							gap: '$5',
+						}}
+					>
+						<Text
+							as='h3'
+							css={{
+								fontWeight: 700,
+							}}
+						>
+							select a payment method:
+						</Text>
+						<PaymentSelection />
+					</Flex>
+				</Flex>
 			</Flex>
 		</Flex>
 	)

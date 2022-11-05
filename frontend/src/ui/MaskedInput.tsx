@@ -1,6 +1,7 @@
+import InputMask from 'react-input-mask'
 import { styled } from './stitches.config'
 
-export const Input = styled('input', {
+export const MaskedInput = styled(InputMask, {
 	fontFamily: 'Inter',
 	fontWeight: 700,
 	color: '$rust100',
