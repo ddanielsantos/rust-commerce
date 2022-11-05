@@ -6,7 +6,7 @@ export const Button = styled('button', {
 	fontFamily: 'Inter',
 	borderRadius: 10,
 	padding: '0.7rem 1rem',
-	transition: 'ease 0.4s',
+	transition: 'all ease 0.4s, outline 0s',
 	border: '1px solid',
 
 	'&:focus': {

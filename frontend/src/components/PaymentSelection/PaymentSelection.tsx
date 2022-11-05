@@ -1,40 +1,8 @@
 import { Radio, RadioGroup, useRadioState } from 'ariakit/radio'
-import {
-	Select,
-	SelectItem as ASelectItem,
-	SelectPopover as ASelectPopover,
-	useSelectState,
-} from 'ariakit/select'
+import { useSelectState } from 'ariakit/select'
 import { AddCardModal } from '../AddCardModal/AddCardModal'
-import { Button, Flex, Label } from '../../ui'
-import { styled } from '../../ui/stitches.config'
+import { Button, Flex, Label, Select } from '../../ui'
 import { FormEvent } from 'react'
-
-const SelectItem = styled(ASelectItem, {
-	backgroundColor: 'White',
-	color: '$rust100',
-	borderRadius: 5,
-	p: '$2',
-	'@bp1': {
-		p: '$4',
-	},
-	'&:hover': {
-		backgroundColor: '$rust100',
-		color: 'White',
-	},
-})
-
-const SelectPopover = styled(ASelectPopover, {
-	backgroundColor: 'White',
-	border: '1px solid gainsboro',
-	width: 'fit-content',
-	color: '$rust100',
-	borderRadius: 10,
-	display: 'flex',
-	flexDirection: 'column',
-	gap: '$1',
-	p: '$2',
-})
 
 export const PaymentSelection = () => {
 	const onSubmit = (e: FormEvent<HTMLFormElement>) => {

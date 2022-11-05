@@ -18,7 +18,7 @@ export const Wrapper = styled(Dialog, {
 	overflowY: 'scroll',
 
 	transform: 'translateY(-400px)',
-	transitionDuration: '0.8s',
+	transitionDuration: '0.2s',
 	'&[data-enter]': {
 		transform: 'translateY(0)',
 	},
@@ -42,7 +42,7 @@ export const Dismiss = styled(DialogDismiss, {
 	fontFamily: 'Inter',
 	borderRadius: 10,
 	padding: '0.7rem 1rem',
-	transition: 'ease 0.4s',
+	transition: 'ease 0.2s',
 	border: '1px solid',
 
 	'&:focus': {

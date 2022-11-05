@@ -1,19 +1,14 @@
 import { useDialogState } from 'ariakit/dialog'
 import { FormEvent } from 'react'
-import { Dialog, Button, Flex, Input, MaskedInput, Text } from '../../ui'
-import { SelectItem as ASelectItem } from 'ariakit/select'
-
-import { styled } from '../../ui/stitches.config'
-
-const SelectItem = styled(ASelectItem, {
-	backgroundColor: 'White',
-	color: '$rust100',
-	borderRadius: 5,
-	'&:hover': {
-		backgroundColor: '$rust100',
-		color: 'White',
-	},
-})
+import {
+	Dialog,
+	Select,
+	Button,
+	Flex,
+	Input,
+	MaskedInput,
+	Text,
+} from '../../ui'
 
 export const AddCardModal = () => {
 	const dialog = useDialogState({ animated: true })
@@ -24,7 +19,8 @@ export const AddCardModal = () => {
 
 	return (
 		<>
-			<SelectItem onClick={dialog.toggle}>add a card</SelectItem>
+			<Select.Item onClick={dialog.toggle}>add a card</Select.Item>
+
 			<Dialog.Wrapper state={dialog}>
 				<form onSubmit={onSubmit}>
 					<Dialog.Heading>add a card</Dialog.Heading>
