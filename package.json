@@ -1,0 +1,8 @@
+{
+  "name": "rust-commerce",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": ["e-commerce", "rust", "nextjs"],
+  "author": "ddanielsantos",
+  "license": "ISC"
+}
