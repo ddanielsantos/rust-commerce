@@ -1,0 +1,28 @@
+{
+  "name": "rust-commerce",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "e-commerce",
+    "rust",
+    "nextjs"
+  ],
+  "author": "ddanielsantos",
+  "license": "ISC",
+  "scripts": {
+    "dev:c": "pnpm --filter buyrust dev",
+    "dev:s": "cargo run --manifest-path=apps/backend/Cargo.toml",
+    "build:c": "pnpm --filter buyrust build",
+    "build:s": "cargo build --manifest-path=apps/backend/Cargo.toml",
+    "start:c": "pnpm --filter buyrust start",
+    "start:s": "./apps/backend/target/debug/buyrust",
+    "format:c": "pnpm --filter buyrust format",
+    "test:c": "pnpm --filter buyrust test",
+    "test:s": "cargo test --manifest-path=apps/backend/Cargo.toml",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3"
+  }
+}
