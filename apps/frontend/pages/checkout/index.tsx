@@ -1,7 +1,8 @@
 import type { NextPage } from 'next'
 import { Header } from '../../src/components/Header/Header'
-import { Flex, Heading, Text } from '../../src/ui'
+import { Flex, Heading, Text, Button } from '../../src/ui'
 import { PaymentSelection } from '../../src/components/PaymentSelection/PaymentSelection'
+import { ShippingAddressSelection } from '../../src/components/ShippingAddressSelection/ShippingAddressSelection'
 
 const CheckoutPage: NextPage = () => {
 	return (
@@ -31,23 +32,55 @@ const CheckoutPage: NextPage = () => {
 					<Heading>Checkout</Heading>
 
 					<Flex
-						type='spaced'
-						borderVariant='simple'
-						roundedBorder
 						direction='column'
 						css={{
 							gap: '$5',
 						}}
 					>
-						<Text
-							as='h3'
-							css={{
-								fontWeight: 700,
+						<form
+							style={{
+								display: 'flex',
+								flexDirection: 'column',
+								// gap: '1rem',
 							}}
 						>
-							select a payment method:
-						</Text>
-						<PaymentSelection />
+							<Flex
+								type='spaced'
+								roundedBorder
+								borderVariant='simple'
+								direction='column'
+							>
+								<Text
+									as='h3'
+									css={{
+										fontWeight: 700,
+									}}
+								>
+									Select a payment method:
+								</Text>
+								<PaymentSelection />
+							</Flex>
+
+							<Flex
+								type='spaced'
+								roundedBorder
+								borderVariant='simple'
+								direction='column'
+							>
+								<Text
+									as='h3'
+									css={{
+										fontWeight: 700,
+									}}
+								>
+									Select a shipping address:
+								</Text>
+								<ShippingAddressSelection />
+							</Flex>
+							<Button variant='primary' type='submit'>
+								send
+							</Button>
+						</form>
 					</Flex>
 				</Flex>
 			</Flex>
