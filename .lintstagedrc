@@ -3,7 +3,6 @@
 		"pnpm format:c"
 	],
   "*.rs": [
-    "rustfmt --edition=2021",
-    "clippy-driver"
+    "rustfmt --edition=2021"
   ]
 }

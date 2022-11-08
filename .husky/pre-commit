@@ -1,4 +1,11 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+#!/usr/bin/env bash
+bash "$(dirname -- "$0")/_/husky.sh"
+
 
 pnpm lint-staged
+
+hasrs="$(git status -s | grep .rs)"
+
+if [[ $hasrs ]]; then
+  cargo clippy --manifest-path=apps/backend/Cargo.toml
+fi
