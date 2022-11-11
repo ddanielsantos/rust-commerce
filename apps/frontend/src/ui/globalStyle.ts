@@ -5,17 +5,15 @@ const dialogCSS = {
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
-		backgroundColor: 'hsl(365 100% 100% / 0.1)',
 
 		transform: 'translateY(-400px)',
-		backdropFilter: 'blur(0)',
 		transitionProperty: 'translate',
 		transitionTimingFunction: 'linear',
 	},
 
 	'[data-backdrop][data-enter]': {
+		backgroundColor: 'hsl(360 0% 60% / 0.5)',
 		transform: 'translateY(0)',
-		backdropFilter: 'blur(1px)',
 	},
 
 	'[data-backdrop][data-leave]': { transform: 'translateY(-400px)' },
