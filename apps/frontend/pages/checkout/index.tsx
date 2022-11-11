@@ -62,13 +62,14 @@ const CheckoutPage: NextPage = () => {
 									roundedBorder
 									borderVariant='simple'
 									direction='column'
+									css={{ gap: '$5' }}
 								>
 									<Text
 										css={{
 											fontWeight: 700,
 										}}
 									>
-										Select a payment method:
+										Select a payment method
 									</Text>
 									<PaymentSelection />
 								</Flex>
@@ -78,13 +79,14 @@ const CheckoutPage: NextPage = () => {
 									roundedBorder
 									borderVariant='simple'
 									direction='column'
+									css={{ gap: '$5' }}
 								>
 									<Text
 										css={{
 											fontWeight: 700,
 										}}
 									>
-										Select a shipping address:
+										Select a shipping address
 									</Text>
 									<ShippingAddressSelection />
 								</Flex>

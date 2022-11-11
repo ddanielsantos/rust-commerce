@@ -24,9 +24,8 @@ export const Item = styled(SelectItem, {
 	scrollMargin: '0.5rem',
 	alignItems: 'center',
 	gap: '0.5rem',
-	// outline: 'none !important',
 
-	'&[data-active-item]': {
+	' &[data-active-item],&[data-active-item] *': {
 		backgroundColor: '$rust100',
 		color: 'hsl(204 20% 100%)',
 	},
