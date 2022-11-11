@@ -7,7 +7,7 @@ import {
 	Flex,
 	Input,
 	MaskedInput,
-	Text,
+	Label,
 } from '../../ui'
 
 export const AddCardModal = () => {
@@ -25,42 +25,42 @@ export const AddCardModal = () => {
 				<form onSubmit={onSubmit}>
 					<Dialog.Heading>add a card</Dialog.Heading>
 
-					<Text
+					<Label
 						as='label'
 						css={{ display: 'flex', flexDirection: 'column', gap: '$3' }}
 					>
-						owner name:
+						Owner name
 						<Input name={'owner_name'} />
-					</Text>
-					<Text
+					</Label>
+					<Label
 						as='label'
 						css={{ display: 'flex', flexDirection: 'column', gap: '$3' }}
 					>
-						card number:
+						Card number
 						<MaskedInput
 							mask='9999 9999 9999 9999'
 							maskPlaceholder={null}
 							name={'card_number'}
 						/>
-					</Text>
-					<Text
+					</Label>
+					<Label
 						as='label'
 						css={{ display: 'flex', flexDirection: 'column', gap: '$3' }}
 					>
-						cvv:
+						CVV
 						<MaskedInput mask='999' maskPlaceholder={null} name={'cvv'} />
-					</Text>
-					<Text
+					</Label>
+					<Label
 						as='label'
 						css={{ display: 'flex', flexDirection: 'column', gap: '$3' }}
 					>
-						expiry date:
+						Expiry date
 						<MaskedInput
 							mask='99/99'
 							maskPlaceholder={null}
 							name={'expiry_date'}
 						/>
-					</Text>
+					</Label>
 
 					<Flex css={{ gap: '$3', mt: 'auto', alignSelf: 'end' }}>
 						<Dialog.Dismiss>cancel</Dialog.Dismiss>

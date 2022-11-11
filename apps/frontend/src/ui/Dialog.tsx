@@ -29,10 +29,10 @@ export const Wrapper = styled(Dialog, {
 
 	p: '$4',
 	'@bp1': {
-		p: '$5',
+		p: '$7',
 	},
 	'@bp3': {
-		borderRadius: 5,
+		borderRadius: '$2xl',
 	},
 })
 
@@ -69,4 +69,5 @@ export const Heading = styled(DialogHeading, {
 	fontFamily: 'Inter',
 	fontWeight: 900,
 	color: '$rust100',
+	mb: '$4',
 })

@@ -45,7 +45,7 @@ const CartPage: NextPage = () => {
 						gridTemplateColumns: '1fr',
 
 						'@bp1': {
-							gridTemplateColumns: '1fr $3xs',
+							gridTemplateColumns: '1fr $2xs',
 						},
 					}}
 				>

@@ -1,7 +1,6 @@
-import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { useCart } from '../../context/CartContext'
-import { Button, Text, Flex, Box } from '../../ui/'
+import { Button, Flex, Link } from '../../ui/'
 import { CartQuantityIndicator } from '../CartQuantityIndicator/CartQuantityIndicator'
 
 export const Header = () => {
@@ -15,15 +14,9 @@ export const Header = () => {
 			justify={'between'}
 			align={'center'}
 		>
-			<NextLink href={'/product/1'}>
-				<Text
-					style={{
-						textDecoration: 'underline',
-					}}
-				>
-					buyrust
-				</Text>
-			</NextLink>
+			<Link href={'/product/1'} variant={'secondary'}>
+				buyrust
+			</Link>
 			<Flex
 				justify={'center'}
 				align={'center'}
@@ -33,21 +26,10 @@ export const Header = () => {
 			>
 				<Button variant={'secondary'}>login</Button>
 				{shouldDisplayCartButton && (
-					<NextLink
-						href='/cart'
-						style={{
-							textDecoration: 'none',
-						}}
-					>
-						<Box
-							css={{
-								textDecoration: 'none',
-							}}
-						>
-							<CartQuantityIndicator quantity={numberOfItems} />
-							<Button variant='secondary'>cart icon</Button>
-						</Box>
-					</NextLink>
+					<Link href='/cart' variant='secondary'>
+						<CartQuantityIndicator quantity={numberOfItems} />
+						cart icon
+					</Link>
 				)}
 			</Flex>
 		</Flex>
