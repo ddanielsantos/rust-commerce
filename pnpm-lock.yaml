@@ -15,7 +15,7 @@ importers:
       '@stitches/react': ^1.2.8
       '@testing-library/react': ^13.4.0
       '@types/node': 18.11.10
-      '@types/react': 18.0.22
+      '@types/react': 18.0.26
       '@types/react-dom': 18.0.7
       '@types/react-input-mask': ^3.0.1
       '@typescript-eslint/eslint-plugin': ^5.41.0
@@ -47,7 +47,7 @@ importers:
     devDependencies:
       '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
       '@types/node': 18.11.10
-      '@types/react': 18.0.22
+      '@types/react': 18.0.26
       '@types/react-dom': 18.0.7
       '@types/react-input-mask': 3.0.2
       '@typescript-eslint/eslint-plugin': 5.42.0_6xw5wg2354iw4zujk2f3vyfrzu
@@ -684,17 +684,17 @@ packages:
   /@types/react-dom/18.0.7:
     resolution: {integrity: sha512-HaXc+BbqAZE1RdsK3tC8SbkFy6UL2xF76lT9rQs5JkPrJg3rWA3Ou/Lhw3YJQzEDkBpmJ79nBsfnd05WrBd2QQ==}
     dependencies:
-      '@types/react': 18.0.22
+      '@types/react': 18.0.26
     dev: true
 
   /@types/react-input-mask/3.0.2:
     resolution: {integrity: sha512-WTli3kUyvUqqaOLYG/so2pLqUvRb+n4qnx2He5klfqZDiQmRyD07jVIt/bco/1BrcErkPMtpOm+bHii4Oed6cQ==}
     dependencies:
-      '@types/react': 18.0.22
+      '@types/react': 18.0.26
     dev: true
 
-  /@types/react/18.0.22:
-    resolution: {integrity: sha512-4yWc5PyCkZN8ke8K9rQHkTXxHIWHxLzzW6RI1kXVoepkD3vULpKzC2sDtAMKn78h92BRYuzf+7b/ms7ajE6hFw==}
+  /@types/react/18.0.26:
+    resolution: {integrity: sha512-hCR3PJQsAIXyxhTNSiDFY//LhnMZWpNNr5etoCqx/iUfGc5gXWtQR2Phl908jVR6uPXacojQWTg4qRpkxTuGug==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
