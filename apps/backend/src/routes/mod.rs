@@ -1,4 +1,10 @@
+use utoipa::OpenApi;
+
 use axum::Router;
+
+#[derive(OpenApi)]
+#[openapi(paths(product::post_endpoint), components(schemas(product::MyInput)))]
+pub struct ApiDoc;
 
 mod product;
 
