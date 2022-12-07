@@ -4,10 +4,10 @@ on:
     branches:
       - main
     paths:
-      - '/backend/**'
+      - '/apps/backend/**'
   pull_request:
     paths:
-      - '/backend/**'
+      - '/apps/backend/**'
 jobs: 
   test:
     runs-on: ubuntu-latest
@@ -20,4 +20,4 @@ jobs:
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-      - run: cargo test --manifest-path ./backend/Cargo.toml
+      - run: cargo test --manifest-path ./apps/backend/Cargo.toml
