@@ -1,3 +1,4 @@
+mod error;
 mod routes;
 
 use std::{error::Error, net::SocketAddr};
@@ -19,11 +20,10 @@ pub fn app(db: PgPool) -> Router {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
+    // todo!: host and port from env
     let addr = SocketAddr::from(([127, 0, 0, 1], 8000));
 
-    let database_url = dotenvy::var("DATABASE_URL")
-        // The error from `var()` doesn't mention the environment variable.
-        .expect("DATABASE_URL must be set");
+    let database_url = dotenvy::var("DATABASE_URL").expect("DATABASE_URL must be set");
 
     let db = PgPoolOptions::new()
         .max_connections(20)
@@ -31,6 +31,11 @@ async fn main() -> Result<(), Box<dyn Error>> {
         .await
         .expect("could not connect to database");
 
+    // todo!: maybe a function?
+    sqlx::migrate!("./src/migrations").run(&db).await?;
+
+    // todo!: logging
+    println!("migrations up to date!");
     println!("listening on {}", addr);
 
     axum::Server::bind(&addr)
