@@ -2,14 +2,19 @@ use utoipa::OpenApi;
 
 use axum::Router;
 
+use crate::error;
+
 #[derive(OpenApi)]
-#[openapi(paths(product::post_endpoint), components(schemas(product::MyInput)))]
+#[openapi(
+    paths(customer::create_customer,),
+    components(schemas(customer::Customer, error::Error))
+)]
 pub struct ApiDoc;
 
-mod product;
+mod customer;
 
 pub fn app_routes() -> Router {
-    let product_routes = product::product_routes();
+    let customer_routes = customer::customer_routes();
 
-    Router::new().nest("/product", product_routes)
+    Router::new().nest("/customer", customer_routes)
 }
