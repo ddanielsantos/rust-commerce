@@ -1,3 +1,4 @@
+mod cors;
 mod error;
 mod routes;
 
@@ -16,6 +17,7 @@ pub fn app(db: PgPool) -> Router {
         .merge(app_routes())
         .merge(SwaggerUi::new("/swagger-ui").url("/api-doc/openapi.json", ApiDoc::openapi()))
         .layer(Extension(db))
+        .layer(cors::cors_layer())
 }
 
 #[tokio::main]
