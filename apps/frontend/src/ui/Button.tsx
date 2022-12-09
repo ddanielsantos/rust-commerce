@@ -24,8 +24,7 @@ export const Button = styled('button', {
 				color: 'White',
 
 				'&:hover': {
-					backgroundColor: 'White',
-					color: '$rust90',
+					backgroundColor: '$rust100',
 				},
 
 				'&:hover:active': {

@@ -10,12 +10,16 @@
 		"test": "vitest --run"
 	},
 	"dependencies": {
+		"@hookform/resolvers": "^2.9.10",
 		"@stitches/react": "^1.2.8",
+		"@tanstack/react-query": "^4.19.1",
 		"ariakit": "2.0.0-next.41",
 		"next": "13.0.6",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"react-input-mask": "3.0.0-alpha.2"
+		"react-hook-form": "^7.40.0",
+		"react-input-mask": "3.0.0-alpha.2",
+		"zod": "3.19.1"
 	},
 	"devDependencies": {
 		"@testing-library/react": "^13.4.0",
