@@ -8,8 +8,14 @@ pub struct ServerConfig {
 impl ServerConfig {
     pub fn new() -> Self {
         // todo! better way to get from env and parse
-        let host: Result<Ipv4Addr, _> = dotenvy::var("HOST").expect("HOST must be set").parse();
-        let host = host.unwrap_or(Ipv4Addr::new(127, 0, 0, 1));
+
+        let host: Ipv4Addr = dotenvy::var("RAILWAY_ENVIRONMENT")
+            .map(|env| match env.as_str() {
+                "production" => Ipv4Addr::new(0, 0, 0, 0),
+                _ => Ipv4Addr::LOCALHOST,
+            })
+            .unwrap_or(Ipv4Addr::LOCALHOST);
+
         let port: Result<u16, _> = dotenvy::var("PORT").expect("PORT must be set").parse();
         let port = port.unwrap_or(2000);
         let database_url = dotenvy::var("DATABASE_URL").expect("DATABASE_URL must be set");
