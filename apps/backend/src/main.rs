@@ -1,8 +1,9 @@
+mod config;
 mod cors;
 mod error;
 mod routes;
 
-use std::{error::Error, net::SocketAddr};
+use std::error::Error;
 
 use axum::{Extension, Router};
 use utoipa::OpenApi;
@@ -11,6 +12,8 @@ use utoipa_swagger_ui::SwaggerUi;
 use sqlx::{postgres::PgPoolOptions, PgPool};
 
 use routes::{app_routes, ApiDoc};
+
+use crate::config::ServerConfig;
 
 pub fn app(db: PgPool) -> Router {
     Router::new()
@@ -22,14 +25,11 @@ pub fn app(db: PgPool) -> Router {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
-    // todo!: host and port from env
-    let addr = SocketAddr::from(([127, 0, 0, 1], 8000));
-
-    let database_url = dotenvy::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    let config = ServerConfig::new();
 
     let db = PgPoolOptions::new()
         .max_connections(20)
-        .connect(&database_url)
+        .connect(&config.database_url)
         .await
         .expect("could not connect to database");
 
@@ -38,9 +38,9 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
     // todo!: logging
     println!("migrations up to date!");
-    println!("listening on {}", addr);
+    println!("listening on {}", config.address);
 
-    axum::Server::bind(&addr)
+    axum::Server::bind(&config.address)
         .serve(app(db).into_make_service())
         .await
         .unwrap();
