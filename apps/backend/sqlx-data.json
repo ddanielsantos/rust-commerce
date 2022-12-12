@@ -1,0 +1,44 @@
+{
+  "db": "PostgreSQL",
+  "022be262a42162cf2ae0f94271c8125e71f4cbfaa8a419a2cce71fbab5150636": {
+    "describe": {
+      "columns": [
+        {
+          "name": "first_name",
+          "ordinal": 0,
+          "type_info": "Varchar"
+        },
+        {
+          "name": "last_name",
+          "ordinal": 1,
+          "type_info": "Varchar"
+        },
+        {
+          "name": "email",
+          "ordinal": 2,
+          "type_info": "Text"
+        },
+        {
+          "name": "password",
+          "ordinal": 3,
+          "type_info": "Text"
+        }
+      ],
+      "nullable": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "parameters": {
+        "Left": [
+          "Varchar",
+          "Varchar",
+          "Text",
+          "Text"
+        ]
+      }
+    },
+    "query": "\n            with inserted_customer as (\n                insert into customers(first_name, last_name, email, password)\n                values ($1, $2, $3, $4)\n                returning first_name, last_name, email, password\n            )\n            select first_name, last_name, email, password\n            from inserted_customer\n        "
+  }
+}
