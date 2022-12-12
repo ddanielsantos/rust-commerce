@@ -1,5 +1,5 @@
 ARG PORT
-
+ARG DATABASE_URL
 # just the necessary to build
 FROM rust:slim-buster as build
 
@@ -10,16 +10,13 @@ WORKDIR /buyrust
 # copy info about the dependencies
 COPY ./Cargo.lock ./Cargo.lock
 COPY ./Cargo.toml ./Cargo.toml
-COPY ./sqlx-data.json ./sqlx-data.json
-
-ENV SQLX_OFFLINE true
 
 # build target and remove source code - this will cache the deps
-RUN cargo build --release && rm src/*.rs
+RUN DATABASE_URL=${DATABASE_URL} cargo build --release && rm src/*.rs
 
 # this will cache the code
 COPY ./src ./src
-RUN rm ./target/release/deps/buyrust* && cargo build --release
+RUN rm ./target/release/deps/buyrust* && DATABASE_URL=${DATABASE_URL} cargo build --release
 
 # building with the smallest debian image
 FROM debian:buster-slim
