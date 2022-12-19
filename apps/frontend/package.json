@@ -19,7 +19,7 @@
 		"react-dom": "18.2.0",
 		"react-hook-form": "^7.40.0",
 		"react-input-mask": "3.0.0-alpha.2",
-		"zod": "3.19.1"
+		"zod": "3.20.2"
 	},
 	"devDependencies": {
 		"@testing-library/react": "^13.4.0",
