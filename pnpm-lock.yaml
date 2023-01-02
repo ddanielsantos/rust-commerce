@@ -23,7 +23,7 @@ importers:
       '@typescript-eslint/eslint-plugin': ^5.41.0
       '@typescript-eslint/parser': ^5.41.0
       '@vitejs/plugin-react': ^3.0.0
-      ariakit: 2.0.0-next.42
+      ariakit: 2.0.0-next.43
       eslint: 8.31.0
       eslint-config-next: 13.1.1
       eslint-config-prettier: ^8.5.0
@@ -45,7 +45,7 @@ importers:
       '@hookform/resolvers': 2.9.10_react-hook-form@7.40.0
       '@stitches/react': 1.2.8_react@18.2.0
       '@tanstack/react-query': 4.19.1_biqbaboplfbrettd7655fr4n2y
-      ariakit: 2.0.0-next.42_ib3m5ricvtkl2cll7qpr2f6lvq
+      ariakit: 2.0.0-next.43_ib3m5ricvtkl2cll7qpr2f6lvq
       next: 13.1.1_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -1170,8 +1170,8 @@ packages:
     resolution: {integrity: sha512-IcjtuHl7FZP5mGrpvTSXqPUj+jRuIuBHlJAlxr3y4pxRgYpsYVpyZOClU3yrOoG7KUVApfmJjPOGWy00y+Gi+Q==}
     dev: false
 
-  /ariakit/2.0.0-next.42_ib3m5ricvtkl2cll7qpr2f6lvq:
-    resolution: {integrity: sha512-GCLpC6h+wITwyK5Dt0grA0Kel/uBBop+4cbqWWjqcL8wL2hZQHKaus89RrtEcebAkDuvvgNDNOStPzvJ7geCGQ==}
+  /ariakit/2.0.0-next.43_ib3m5ricvtkl2cll7qpr2f6lvq:
+    resolution: {integrity: sha512-CatNgIMyurefYTEvp8aF3aQQGR5m9bZxYQXuqyw/MKwxJ/aJ295SSSY5pXyTHbbsgDI28GOKFYa5pfUBvkd7cQ==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
