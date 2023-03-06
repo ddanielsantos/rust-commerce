@@ -40,7 +40,7 @@ importers:
       typescript: 4.9.5
       vite: ^4.0.0
       vitest: ^0.29.0
-      zod: 3.21.0
+      zod: 3.21.2
     dependencies:
       '@hookform/resolvers': 2.9.10_react-hook-form@7.40.0
       '@stitches/react': 1.2.8_react@18.2.0
@@ -51,7 +51,7 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       react-hook-form: 7.40.0_react@18.2.0
       react-input-mask: 3.0.0-alpha.2_biqbaboplfbrettd7655fr4n2y
-      zod: 3.21.0
+      zod: 3.21.2
     devDependencies:
       '@testing-library/react': 14.0.0_biqbaboplfbrettd7655fr4n2y
       '@types/node': 18.14.6
@@ -4146,6 +4146,6 @@ packages:
     engines: {node: '>=12.20'}
     dev: true
 
-  /zod/3.21.0:
-    resolution: {integrity: sha512-UYdykTcVxB6lfdyLzAqLyyYAlOcpoluECvjsdoaqfQmz9p+3LRaIqYcNiL/J2kFYp66fBM8wwBvIGVEjq7KtZw==}
+  /zod/3.21.2:
+    resolution: {integrity: sha512-0Ygy2/IZNIxHterZdHjE5Vb8hp1fUHJD/BGvSHj8QJx+UipEVNvo9WLchoyBpz5JIaN6KmdGDGYdloGzpFK98g==}
     dev: false
