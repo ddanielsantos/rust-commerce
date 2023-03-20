@@ -12,7 +12,7 @@ importers:
 
   apps/frontend:
     specifiers:
-      '@hookform/resolvers': ^2.9.10
+      '@hookform/resolvers': ^3.0.0
       '@stitches/react': ^1.2.8
       '@tanstack/react-query': ^4.19.1
       '@testing-library/react': ^14.0.0
@@ -42,7 +42,7 @@ importers:
       vitest: ^0.29.0
       zod: 3.21.4
     dependencies:
-      '@hookform/resolvers': 2.9.10_react-hook-form@7.40.0
+      '@hookform/resolvers': 3.0.0_react-hook-form@7.40.0
       '@stitches/react': 1.2.8_react@18.2.0
       '@tanstack/react-query': 4.19.1_biqbaboplfbrettd7655fr4n2y
       ariakit: 2.0.0-next.43_zula6vjvt3wdocc4mwcxqa6nzi
@@ -561,8 +561,8 @@ packages:
       '@floating-ui/core': 1.0.1
     dev: false
 
-  /@hookform/resolvers/2.9.10_react-hook-form@7.40.0:
-    resolution: {integrity: sha512-JIL1DgJIlH9yuxcNGtyhsWX/PgNltz+5Gr6+8SX9fhXc/hPbEIk6wPI82nhgvp3uUb6ZfAM5mqg/x7KR7NAb+A==}
+  /@hookform/resolvers/3.0.0_react-hook-form@7.40.0:
+    resolution: {integrity: sha512-SQPefakODpyq25b/phHXDKCdRrEfPcCXV7B4nAa139wE1DxufYbbNAjeo0T04ZXBokRxZ+wD8iA1kkVMa3QwjQ==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
