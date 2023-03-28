@@ -17,7 +17,7 @@ dotenvy = "0.15"
 axum = "0.6"
 utoipa = { features = ["axum_extras"], version = "3.1.2" }
 utoipa-swagger-ui = { features = ["axum"], version = "3.1.1" }
-tokio = { version = "1.26.0", features = ["full"] }
+tokio = { version = "1.27.0", features = ["full"] }
 serde = { version = "1.0.158", features = ["derive"] }
 tower-http = { version = "0.4.0", features = ["cors"] }
 
