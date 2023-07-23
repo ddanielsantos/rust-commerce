@@ -1584,9 +1584,9 @@ dependencies = [
 
 [[package]]
 name = "utoipa"
-version = "3.4.1"
+version = "3.4.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "33e5d67a965da56058c6b4d1ddf06ffc4fe9d930c3f52fbeb2e45c7882fb8d5c"
+checksum = "8c624186f22e625eb8faa777cb33d34cd595aa16d1742aa1d8b6cf35d3e4dda9"
 dependencies = [
  "indexmap 2.0.0",
  "serde",
@@ -1596,9 +1596,9 @@ dependencies = [
 
 [[package]]
 name = "utoipa-gen"
-version = "3.4.2"
+version = "3.4.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a94021cb5f687af01f4e127e772f06793e743e001ffdd75b2c516586a9a65e96"
+checksum = "b9ce5f21ca77e010f5283fa791c6ab892c68b3668a1bdc6b7ac6cf978f5d5b30"
 dependencies = [
  "proc-macro-error",
  "proc-macro2",
