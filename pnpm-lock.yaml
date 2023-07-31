@@ -28,7 +28,7 @@ importers:
         version: 4.19.1(react-dom@18.2.0)(react@18.2.0)
       ariakit:
         specifier: 2.0.0-next.44
-        version: 2.0.0-next.44(@types/react@18.2.17)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.0.0-next.44(@types/react@18.2.18)(react-dom@18.2.0)(react@18.2.0)
       next:
         specifier: 13.4.12
         version: 13.4.12(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0)
@@ -55,8 +55,8 @@ importers:
         specifier: 18.17.1
         version: 18.17.1
       '@types/react':
-        specifier: 18.2.17
-        version: 18.2.17
+        specifier: 18.2.18
+        version: 18.2.18
       '@types/react-dom':
         specifier: 18.2.7
         version: 18.2.7
@@ -895,17 +895,17 @@ packages:
   /@types/react-dom@18.2.7:
     resolution: {integrity: sha512-GRaAEriuT4zp9N4p1i8BDBYmEyfo+xQ3yHjJU4eiK5NDa1RmUZG+unZABUTK4/Ox/M+GaHwb6Ow8rUITrtjszA==}
     dependencies:
-      '@types/react': 18.2.17
+      '@types/react': 18.2.18
     dev: true
 
   /@types/react-input-mask@3.0.2:
     resolution: {integrity: sha512-WTli3kUyvUqqaOLYG/so2pLqUvRb+n4qnx2He5klfqZDiQmRyD07jVIt/bco/1BrcErkPMtpOm+bHii4Oed6cQ==}
     dependencies:
-      '@types/react': 18.2.17
+      '@types/react': 18.2.18
     dev: true
 
-  /@types/react@18.2.17:
-    resolution: {integrity: sha512-u+e7OlgPPh+aryjOm5UJMX32OvB2E3QASOAqVMY6Ahs90djagxwv2ya0IctglNbNTexC12qCSMZG47KPfy1hAA==}
+  /@types/react@18.2.18:
+    resolution: {integrity: sha512-da4NTSeBv/P34xoZPhtcLkmZuJ+oYaCxHmyHzwaDQo9RQPBeXV+06gEk2FpqEcsX9XrnNLvRpVh6bdavDSjtiQ==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
@@ -1274,13 +1274,13 @@ packages:
       deep-equal: 2.1.0
     dev: true
 
-  /ariakit-react-utils@0.17.0-next.27(@types/react@18.2.17)(react@18.2.0):
+  /ariakit-react-utils@0.17.0-next.27(@types/react@18.2.18)(react@18.2.0):
     resolution: {integrity: sha512-YyL3sEowwaw6r8wRjENB9S4Hjz/ppyv5nJNeFkb6xaEX/QYUYmqL+lQch50LW04vj9oa8RGHlY2SmyQX3d7g3w==}
     peerDependencies:
       '@types/react': ^17.0.0 || ^18.0.0
       react: ^17.0.0 || ^18.0.0
     dependencies:
-      '@types/react': 18.2.17
+      '@types/react': 18.2.18
       ariakit-utils: 0.17.0-next.27
       react: 18.2.0
     dev: false
@@ -1289,14 +1289,14 @@ packages:
     resolution: {integrity: sha512-IcjtuHl7FZP5mGrpvTSXqPUj+jRuIuBHlJAlxr3y4pxRgYpsYVpyZOClU3yrOoG7KUVApfmJjPOGWy00y+Gi+Q==}
     dev: false
 
-  /ariakit@2.0.0-next.44(@types/react@18.2.17)(react-dom@18.2.0)(react@18.2.0):
+  /ariakit@2.0.0-next.44(@types/react@18.2.18)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-vWWS+2HUFz4Nii1lXP3QHMa+fxr9vbu4p/sGmD/b80+JfVtW8OicAUSR4FXnyMwX2nVy+77DN6eAw3/LbuzX1g==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
     dependencies:
       '@floating-ui/dom': 1.0.4
-      ariakit-react-utils: 0.17.0-next.27(@types/react@18.2.17)(react@18.2.0)
+      ariakit-react-utils: 0.17.0-next.27(@types/react@18.2.18)(react@18.2.0)
       ariakit-utils: 0.17.0-next.27
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
